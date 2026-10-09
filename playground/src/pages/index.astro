@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>astro-loader-directus playground</title>
+	</head>
+	<body>
+		<h1>Posts ({posts.length})</h1>
+		<ul>
+			{
+				posts.map((post) => (
+					<li>
+						<code>{post.id}</code>
+						<pre>{JSON.stringify(post.data, null, 2)}</pre>
+					</li>
+				))
+			}
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+services:
+  directus:
+    image: directus/directus:12.5.0
+    ports:
+      - 8055:8055
+    volumes:
+      - directus-data:/directus/database
+      - directus-uploads:/directus/uploads
+    env_file: .env.directus
+
+volumes:
+  directus-data:
+  directus-uploads:

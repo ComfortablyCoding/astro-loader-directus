@@ -1,0 +1,16 @@
+{
+	"name": "playground",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"sync": "astro sync"
+	},
+	"dependencies": {
+		"astro": "7.3.7",
+		"astro-loader-directus": "workspace:*",
+		"sharp": "0.35.5"
+	}
+}
