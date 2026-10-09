@@ -1,0 +1,19 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "unicorn", "oxc", "import", "vitest"],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn"
+	},
+	"rules": {
+		"vitest/consistent-test-it": [
+			"error",
+			{
+				"fn": "test"
+			}
+		],
+		"vitest/require-mock-type-parameters": "off",
+		"no-underscore-dangle": "off"
+	},
+	"ignorePatterns": ["dist", "coverage"]
+}

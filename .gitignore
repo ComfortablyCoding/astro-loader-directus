@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+.astro
+*.log
+.DS_Store
+.env
+.env.directus

@@ -1,0 +1,70 @@
+{
+	"name": "astro-loader-directus",
+	"version": "0.0.0",
+	"description": "Astro Content Layer loader for Directus",
+	"keywords": [
+		"astro",
+		"astro-loader",
+		"content-layer",
+		"directus",
+		"withastro"
+	],
+	"homepage": "https://github.com/ComfortablyCoding/astro-loader-directus#readme",
+	"bugs": {
+		"url": "https://github.com/ComfortablyCoding/astro-loader-directus/issues"
+	},
+	"license": "MIT",
+	"author": "ComfortablyCoding",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ComfortablyCoding/astro-loader-directus.git"
+	},
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"main": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"typecheck": "tsc --noEmit",
+		"lint": "oxlint --deny-warnings",
+		"lint:fix": "oxlint --fix",
+		"format": "oxfmt",
+		"format:check": "oxfmt --check",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test",
+		"prepublishOnly": "pnpm build",
+		"playground": "pnpm --filter playground dev",
+		"playground:directus": "docker compose -f playground/docker-compose.yml up -d"
+	},
+	"dependencies": {
+		"@directus/sdk": "^27.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "22.20.5",
+		"astro": "7.3.7",
+		"oxfmt": "0.72.0",
+		"oxlint": "1.87.0",
+		"tsdown": "0.23.0",
+		"typescript": "7.0.2",
+		"vitest": "5.0.3"
+	},
+	"peerDependencies": {
+		"astro": "^6.0.0 || ^7.0.0"
+	},
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"packageManager": "pnpm@12.10.1"
+}
